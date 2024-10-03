@@ -1,0 +1,14 @@
+{
+    "firstName": "Maria",
+    "lastName": "Franco",
+    "address": {
+      "street": "Calle 123",
+      "city": "Guayaquil",
+      "state": "Estado",
+      "zipCode": "12345"
+    },
+    "phoneNumber": "555555555",
+    "ssn": "123-45-6789",
+    "username": "mariaFranco",
+    "password": "password123"
+}

@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-10-03T02:55:49.716Z",
+    "end": "2024-10-03T02:55:53.468Z",
+    "duration": 3752,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "207e7977-cf31-4880-b546-48ca2776f982",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/transfer.spec.js",
+      "file": "cypress/e2e/tests/transfer.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "03615406-133f-4b77-b0c7-fa0a37a64eec",
+          "title": "Transferencia de dinero",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería permitir transferir dinero entre dos cuentas",
+              "fullTitle": "Transferencia de dinero Debería permitir transferir dinero entre dos cuentas",
+              "timedOut": null,
+              "duration": 2847,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  _loginPage.loginPage.visit();\n  _loginPage.loginPage.fillLoginForm(user.username, user.password);\n  cy.fixture('accountData').then(accountData => {\n    _transferPage.transferPage.visit();\n    _transferPage.transferPage.fillTransferForm(accountData.account, accountData.account, 10); // IDs de cuenta de ejemplo\n    cy.contains('Transfer Complete').should('be.visible');\n  });\n});",
+              "err": {},
+              "uuid": "ab9f70ca-5486-4f45-a4d1-e784e6edd9b4",
+              "parentUUID": "03615406-133f-4b77-b0c7-fa0a37a64eec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab9f70ca-5486-4f45-a4d1-e784e6edd9b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2847,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "yyyy-mm-dd_HH-MM-ss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

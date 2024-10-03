@@ -1,0 +1,323 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 6,
+    "passes": 5,
+    "pending": 0,
+    "failures": 1,
+    "testsRegistered": 6,
+    "passPercent": 83.33333333333333,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2024-10-03T02:55:31.335Z",
+    "end": "2024-10-03T02:55:54.741Z",
+    "duration": 23406
+  },
+  "results": [
+    {
+      "uuid": "7a670b1b-a6f7-4bfe-b192-813f92119a34",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/login.spec.js",
+      "file": "cypress/e2e/tests/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d47e113a-3341-454a-9eaa-ef4fb69d7159",
+          "title": "Login de usuario",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería logearse con un usuario registrado",
+              "fullTitle": "Login de usuario Debería logearse con un usuario registrado",
+              "timedOut": null,
+              "duration": 2933,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  _loginPage.loginPage.visit();\n  _loginPage.loginPage.fillLoginForm(user.username, user.password);\n  cy.contains('Welcome').should('be.visible');\n});",
+              "err": {},
+              "uuid": "504ed0d5-6f33-484c-8658-201b48abf631",
+              "parentUUID": "d47e113a-3341-454a-9eaa-ef4fb69d7159",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "504ed0d5-6f33-484c-8658-201b48abf631"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2933,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "0acba693-02e2-47e1-86d2-c457ac592895",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/register.spec.js",
+      "file": "cypress/e2e/tests/register.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "298f9f98-19e7-4ca0-aab1-e0a10ebed24e",
+          "title": "Registro de usuario",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería registrar un usuario nuevo",
+              "fullTitle": "Registro de usuario Debería registrar un usuario nuevo",
+              "timedOut": null,
+              "duration": 8089,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  _registerPage.registerPage.visit();\n  _registerPage.registerPage.fillRegistrationForm(user);\n  cy.contains('Your account was created successfully').should('be.visible');\n});",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Your account was created successfully' but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'Your account was created successfully' but never did.\n    at Context.eval (webpack://pruebasautomatizadas/./cypress/e2e/tests/register.spec.js:8:59)",
+                "diff": null
+              },
+              "uuid": "8c5a9928-537b-44fd-9b3e-ec81872c5f90",
+              "parentUUID": "298f9f98-19e7-4ca0-aab1-e0a10ebed24e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Debería mostrar un mensaje de usuario ya existente",
+              "fullTitle": "Registro de usuario Debería mostrar un mensaje de usuario ya existente",
+              "timedOut": null,
+              "duration": 3562,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  _registerPage.registerPage.visit();\n  _registerPage.registerPage.fillRegistrationForm(user);\n  cy.contains('This username already exists.').should('be.visible');\n});",
+              "err": {},
+              "uuid": "1af64b0c-db93-4cc6-a1a3-386c447e4c7e",
+              "parentUUID": "298f9f98-19e7-4ca0-aab1-e0a10ebed24e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1af64b0c-db93-4cc6-a1a3-386c447e4c7e"
+          ],
+          "failures": [
+            "8c5a9928-537b-44fd-9b3e-ec81872c5f90"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 11651,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "207e7977-cf31-4880-b546-48ca2776f982",
+      "title": "",
+      "fullFile": "cypress/e2e/tests/transfer.spec.js",
+      "file": "cypress/e2e/tests/transfer.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "03615406-133f-4b77-b0c7-fa0a37a64eec",
+          "title": "Transferencia de dinero",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Debería permitir transferir dinero entre dos cuentas",
+              "fullTitle": "Transferencia de dinero Debería permitir transferir dinero entre dos cuentas",
+              "timedOut": null,
+              "duration": 2847,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('user').then(user => {\n  _loginPage.loginPage.visit();\n  _loginPage.loginPage.fillLoginForm(user.username, user.password);\n  cy.fixture('accountData').then(accountData => {\n    _transferPage.transferPage.visit();\n    _transferPage.transferPage.fillTransferForm(accountData.account, accountData.account, 10); // IDs de cuenta de ejemplo\n    cy.contains('Transfer Complete').should('be.visible');\n  });\n});",
+              "err": {},
+              "uuid": "ab9f70ca-5486-4f45-a4d1-e784e6edd9b4",
+              "parentUUID": "03615406-133f-4b77-b0c7-fa0a37a64eec",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ab9f70ca-5486-4f45-a4d1-e784e6edd9b4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2847,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "4dd19713-14f7-49e4-87d4-34903b3405b5",
+      "title": "",
+      "fullFile": "cypress/api/withdraw.spec.js",
+      "file": "cypress/api/withdraw.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b7716170-246d-4e0a-b571-330ba2698178",
+          "title": "API Tests - Withdraw",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "debería retirar dinero con éxito de una cuenta",
+              "fullTitle": "API Tests - Withdraw debería retirar dinero con éxito de una cuenta",
+              "timedOut": null,
+              "duration": 205,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Realiza la solicitud a la API de retiro\ncy.fixture('accountData').then(withdraw => {\n  cy.request({\n    method: 'POST',\n    url: `https://parabank.parasoft.com/parabank/services/bank/withdraw?accountId=${withdraw.account}&amount=${withdraw.amount}`,\n    headers: {\n      'Content-Type': 'application/json'\n    }\n  }).then(response => {\n    // Verifica que la respuesta tenga un código de estado 200 o el estado adecuado\n    expect(response.status).to.eq(200); // Ajusta esto si el código de estado esperado es diferente\n    // Verifica que la respuesta contenga los datos esperados\n    expect(response.body).to.include('Successfully'); // Ajusta según la respuesta real\n    // Si la API devuelve información sobre el saldo o la cuenta después del retiro, puedes verificar eso también\n    //expect(response.body).to.have.property('accountId', accountId);\n  });\n});",
+              "err": {},
+              "uuid": "9f4f8585-fc18-4bae-a31e-5111e2aba9bf",
+              "parentUUID": "b7716170-246d-4e0a-b571-330ba2698178",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "debería validar si la cuenta existe",
+              "fullTitle": "API Tests - Withdraw debería validar si la cuenta existe",
+              "timedOut": null,
+              "duration": 207,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('accountData').then(withdraw => {\n  cy.request({\n    method: 'POST',\n    url: `https://parabank.parasoft.com/parabank/services/bank/withdraw?accountId=${withdraw.accountNotFound}&amount=${withdraw.amount}`,\n    failOnStatusCode: false,\n    headers: {\n      'Content-Type': 'application/json'\n    }\n  }).then(response => {\n    // Verifica que la respuesta tenga un código de estado 200 o el estado adecuado\n    expect(response.status).to.eq(400); // Ajusta esto si el código de estado esperado es diferente\n    // Verifica que la respuesta contenga los datos esperados\n    expect(response.body).to.include('Could not find account number'); // Ajusta según la respuesta real\n  });\n});",
+              "err": {},
+              "uuid": "f5378308-bc32-4492-a8ba-effa7d91855f",
+              "parentUUID": "b7716170-246d-4e0a-b571-330ba2698178",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9f4f8585-fc18-4bae-a31e-5111e2aba9bf",
+            "f5378308-bc32-4492-a8ba-effa7d91855f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 412,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "timestamp": "yyyy-mm-dd_HH-MM-ss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
