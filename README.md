@@ -45,7 +45,14 @@ Implementar el patrón POM en este proyecto asegura que nuestras pruebas sean m�
 4. Para ejecutar todas las pruebas, utiliza el siguiente comando:
    ```bash
    npx cypress run
-    
+       
+5. Para ejecutar todas las pruebas en el browser , utiliza el siguiente comando:
+   ```bash
+   npx cypress open
+consideraciones:
+   - Se requiere que se ejecute primero el registro de usuario.
+   - en el fixture mock **accountData.json** se debe actualizar el numero de cta (account) que le fue creada para poder realizar la transferencia y el retiro
+  
 6. Para ejecutar un archivo de prueba específico:
    ```bash
    npx cypress run --spec "cypress/e2e/nombreDelArchivo.spec.js"
